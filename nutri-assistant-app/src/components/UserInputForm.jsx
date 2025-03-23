@@ -18,24 +18,29 @@ function UserInputForm() {
     }
     
     console.log("User Data:", newUserData)
-
+    
+    // Clear input fields after submission
+    setWeight("");
+    setHeight("");
+    setWaist("");
+    setHip("");
     }
 
 
   return (
    <>
     <div>
-        <h1>User Data Input</h1>
+        <h2 className='text-blue'>User Data Input</h2>
     </div>
 
-    <div>
+    <div className='flex justify-centre item-centre'>
         <form onSubmit={handleSubmit}> 
             <div>
             <label htmlFor="weight">Weight</label>
             <input type="number" value={weight} onChange={(e)=>setWeight(e.target.value)} />
             </div>
 
-            <div>
+            <div className=''>
             <label htmlFor="height">Height</label>
             <input type="number" value={height} onChange={(e)=>setHeight(e.target.value)} />
             </div>
