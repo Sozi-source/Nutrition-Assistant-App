@@ -79,7 +79,7 @@ const UserInputForm =({className})=> {
             </div>
            </div>
                                    
-            <button type='submit' className='p-3 mt-3 mb-5 font-serif font-semibold bg-blue-300 rounded-sm hover:bg-yellow-300' >Submit</button>
+            <button type='submit' className='p-3 mt-3 mb-5 font-serif font-semibold bg-blue-300 rounded-sm hover:bg-yellow-300 animate-pulse' >Submit</button>
             
         </form> 
   

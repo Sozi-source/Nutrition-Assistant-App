@@ -56,8 +56,8 @@ function NutritionStatus() {
 return (
 
      <div className='w-full mx-auto p-6 bg-white shadow-lg rounded-lg h-120 border border-gray-300'>
-      <h1 className='text-3xl font-bold'>Nutrition Status</h1>
-      <p className=''>Your comprehensive assessment</p>
+      <h1 className='text-3xl font-bold text-gray-500 font-serif animate-bounce'>Nutrition Status</h1>
+      <p className='text-gray-500 font-serif text-xl'>Your comprehensive assessment !</p>
       {bmi && (
 
     <div>

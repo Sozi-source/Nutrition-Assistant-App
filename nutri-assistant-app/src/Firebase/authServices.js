@@ -1,15 +1,27 @@
 
-import { auth } from "./Firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "./Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 
 
 // Sign Up Users
-export const signUpUser = async(email, password, firtname, lastname)=>{
+export const signUpUser = async(email, password, firstname, lastname)=>{
     try{
         const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-        return userCredential.user;
-        await updateProfile(user, {
-            displayName: `${firtname} ${lastname}`
+        const user = userCredential.user;
+
+        // update user profile
+            await updateProfile(user, {
+            displayName: `${firstname} ${lastname}`
+
+        });
+
+            // store user data
+            await setDoc(doc(db, "users", user.uid), {
+                name: `${firstname} ${lastname}`,
+                email: email,
+                uid: user.uid,
+            
         });
 
         return user;
