@@ -30,6 +30,9 @@ function NavBar() {
         <div className='flex justify-between items-center p-4'>
            {/* Show logout button if user is logged in*/}
            
+           {user &&(
+            <div className='mt-3 text-gray-400 ml-4'><LogoutButton /></div>
+           )}
            
              {/*Navigation links  */}
             <ul className='ml-10 flex gap-6 text-blue-700 font-bold mt-5'>
@@ -38,26 +41,7 @@ function NavBar() {
                 <li><Link to = "/about" >About</Link> </li>
                 <li><Link to = "/contact">Contact</Link> </li>
             </ul> 
-            </div>  
-
-             {/* // Profile dropdown */}
-          {user && (
-          <div>
-            <button onClick={()=>setDropdownOpen(!dropdownOpen)}>{user.displayName? 
-              user.displayName: 'Profile'} </button>
-
-          {dropdownOpen &&(
-          <div>
-              <h2>Welcome, {user.displayName || "User"}!</h2>
-              <p>Email: {user.email}</p>
-              <p>UID: {user.uid}</p>
-              <p>Email Verified: {user.emailVerified ? "✅ Yes" : "❌ No"}</p>
-              {user.photoURL && <img src={user.photoURL} alt="Profile" />}
-              <div className='mt-2'><LogoutButton/></div>
-          </div>
-        )}
-  </div>
-   )}
+            </div>          
   </nav>
 </div>  
 )}

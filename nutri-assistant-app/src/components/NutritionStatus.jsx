@@ -55,8 +55,8 @@ function NutritionStatus() {
 
 return (
 
-     <div className='w-full mx-auto p-6 bg-white shadow-lg rounded-lg h-120 border border-gray-300'>
-      <h1 className='text-3xl font-bold text-gray-500 font-serif animate-bounce'>Nutrition Status</h1>
+     <div className='w-full sm:w-2/3 md:w-3/4 p-6 bg-white shadow-lg rounded-lg border border-gray-300 mt-[80px]'>
+      <h1 className='text-3xl font-bold text-gray-500 font-serif'>Nutrition Status</h1>
       <p className='text-gray-500 font-serif text-xl'>Your comprehensive assessment !</p>
       {bmi && (
 
@@ -69,13 +69,13 @@ return (
 
       <div className='flex flex-col md:flex-row mt-5 justify-between gap-1'>
 
-        <div className='border border-gray-200 p-2 rounded-lg shadow-md w-full md:w-1/3 text-center'>
+        <div className='border border-gray-200 p-2 rounded-lg shadow-md w-full md:w-2/3 text-center'>
             <h1 className='text-lg font-semibold'>Body Mass Index</h1>
             <p className='text-2xl font-bold'>{bmi} </p>
             <p className='text-green-600 font-bold'>{bmicategory()} </p>
          </div>
 
-         <div className='border border-gray-200 p-2 rounded-lg shadow-md w-full md:w-1/3 text-center'>
+         <div className='border border-gray-200 p-2 rounded-lg shadow-md w-full md:w-2/3 text-center'>
             <h1 className='text-lg font-semibold'> Waist-Hip Ratio </h1>
             <p className='text-2xl font-bold'>{whr} </p>
             <p className='text-orange-600 font-bold'>{classifyWhr(whr, gender)} </p>
@@ -83,12 +83,6 @@ return (
          </div>
 
      </div>
-
-          <div className='w-full p-6 bg-white shadow-lg rounded-lg text-center border border-gray-200 mt-5'>
-            <h1>Recommendations</h1>
-            <p></p>
-          </div>
-
 
   </div>
       )}

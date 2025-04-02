@@ -12,7 +12,7 @@ import NutritionAssessment from './components/NutritionAssessment';
 
 function App(){
   return(
-    <div>
+    <div className='bg-cover bg-center bg-fixed bg-no-repeat' style={{backgroundImage: "url('/images/bg.jpg')"}}>
   {/* Navbar */}
   <NavBar/>
   {/* Navigation Routes */}
