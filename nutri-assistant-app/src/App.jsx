@@ -9,6 +9,7 @@ import SignIn from './Pages/SignIn';
 import NavBar from './components/NavBar';
 import NutritionAssessment from './components/NutritionAssessment';
 import DietApi from './API/DietApi';
+import AuthPage from './Pages/AuthPage';
 
 
 
@@ -27,6 +28,8 @@ function App(){
     <Route path='/signin' element={<SignIn/>} />
     <Route path='/nutrition-assessment' element={<NutritionAssessment/>} />
     <Route path='/diet-api' element={<DietApi/>} />
+    <Route path='/auth-page' element={<AuthPage/>} />
+
 
 
   </Routes>
