@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useNutritionStore from '../store/useNutritionStore'
+import { useNavigate } from 'react-router-dom';
 
 function NutritionStatus() {
   const{gender, weight, height, waist, hip} =useNutritionStore((state)=>state)
+  const navigate = useNavigate();
 
 
   const numweight = parseFloat(weight) ||0;
@@ -53,9 +55,16 @@ function NutritionStatus() {
     }
 }
 
+// function to hide diet recommendation buttons
+const[isdataSubmitted, setIsdataSubmitted] = useState(false);
+
+useEffect(()=>{
+  setIsdataSubmitted(bmi !== null);
+}, [bmi])
+
 return (
 
-     <div className='w-full sm:w-2/3 md:w-3/4 p-6 bg-white shadow-lg rounded-lg border border-gray-300 mt-[80px]'>
+     <div className='w-full max-w-[1100px] p-6 bg-white shadow-lg rounded-lg border border-gray-300 mt-[80px] mx-auto'>
       <h1 className='text-3xl font-bold text-gray-500 font-serif'>Nutrition Status</h1>
       <p className='text-gray-500 font-serif text-xl'>Your comprehensive assessment !</p>
       {bmi && (
@@ -81,11 +90,21 @@ return (
             <p className='text-orange-600 font-bold'>{classifyWhr(whr, gender)} </p>
 
          </div>
-
      </div>
 
   </div>
       )}
+
+  {/* Show data if BMI exist */}
+  {isdataSubmitted &&(
+    <div className='flex justify-center items-center mt-6 gap-4'>
+    <div>
+        <button onClick={()=>navigate("/diet-api")} className='bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition'>Get Diet Recommendations </button>
+    </div>
+
+</div>
+  )}
+
   </div>
   
 )

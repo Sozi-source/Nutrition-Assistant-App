@@ -8,11 +8,13 @@ import SignUp from './Pages/SignUp';
 import SignIn from './Pages/SignIn';
 import NavBar from './components/NavBar';
 import NutritionAssessment from './components/NutritionAssessment';
+import DietApi from './API/DietApi';
+
 
 
 function App(){
   return(
-    <div className='bg-cover bg-center bg-fixed bg-no-repeat' style={{backgroundImage: "url('/images/bg.jpg')"}}>
+    <div className='bg-cover bg-center bg-fixed bg-no-repeat' style={{backgroundImage: "url('/images/bgI.jpg')"}}>
   {/* Navbar */}
   <NavBar/>
   {/* Navigation Routes */}
@@ -24,6 +26,8 @@ function App(){
     <Route path='/signup' element={<SignUp/>} />
     <Route path='/signin' element={<SignIn/>} />
     <Route path='/nutrition-assessment' element={<NutritionAssessment/>} />
+    <Route path='/diet-api' element={<DietApi/>} />
+
 
   </Routes>
     </div>
