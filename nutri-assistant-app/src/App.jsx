@@ -14,7 +14,7 @@ import DietApi from './API/DietApi';
 
 function App(){
   return(
-    <div className='bg-cover bg-center bg-fixed bg-no-repeat' style={{backgroundImage: "url('/images/bgI.jpg')"}}>
+    <div className='bg-cover bg-center bg-fixed bg-no-repeat h-screen' style={{backgroundImage: "url('/images/bgI.jpg')"}}>
   {/* Navbar */}
   <NavBar/>
   {/* Navigation Routes */}

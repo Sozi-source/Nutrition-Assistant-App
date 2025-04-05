@@ -6,38 +6,47 @@ function NutritionStatus() {
   const{gender, weight, height, waist, hip} =useNutritionStore((state)=>state)
   const navigate = useNavigate();
 
+  const[isdataSubmitted, setIsdataSubmitted] = useState(false);
+  const [bmi, setBmi] =useState(null);
+  const [whr, setWhr] =useState(null);
 
-  const numweight = parseFloat(weight) ||0;
-  const numheight = parseFloat(height) ||0;
-  const numwaist = parseFloat(waist) ||0;
-  const numhip = parseFloat(hip) ||0;
-
-
-  const calculateBmi =()=>{
-    if(numweight && numheight){
-      return (numweight/(numheight/100)**2).toFixed(1);
-    }
-    return null;
-  }
+  useEffect(() => {
+    const numweight = parseFloat(weight) ||0;
+    const numheight = parseFloat(height) ||0;
+    const numwaist = parseFloat(waist) ||0;
+    const numhip = parseFloat(hip) ||0;
   
-  const calculateWhr =()=>{
-    if(numwaist && numhip){
-      return(numwaist/numhip).toFixed(1)
-    }
-    return null
-  }
   
-  const bmi = calculateBmi(); 
-  const whr =calculateWhr()
+    const calculateBmi =()=>{
+      if(numweight && numheight){
+        return (numweight/(numheight/100)**2).toFixed(1);
+      }
+      return null;
+    }
+    
+    const calculateWhr =()=>{
+      if(numwaist && numhip){
+        return(numwaist/numhip).toFixed(1)
+      }
+      return null
+    }
+    
+    const calculatedBmi = calculateBmi(); 
+    const calculatedWhr = calculateWhr();
+    setIsdataSubmitted(calculatedBmi !== null && calculatedWhr !== null);
+
+    setBmi(calculateBmi);
+    setWhr(calculateWhr);
+  }, [weight, height, waist, hip]);
 
   const bmicategory =()=>{
     if (!bmi) return null
-    if (bmi < 18.5) return "Underweight"
-    if (bmi >= 18.5 && bmi <= 24.9 )return "Normal Weight"
-    if (bmi >= 25.0 && bmi <= 29.9 ) return "Overweight"
-    if (bmi >= 30.0 && bmi <= 34.9) return "Obese (Class I)"
-    if (bmi >= 35.0 && bmi <= 39.9) return "Obese (Class II)"
-    if (bmi > 40.0) return "Obese (Class III)"
+    if (bmi < 18.5) return {label: "Underweight", color: "text-yellow-500"};
+    if (bmi >= 18.5 && bmi <= 24.9 )return {label: "Normal Weight", color: "text-green-400"};
+    if (bmi >= 25.0 && bmi <= 29.9 ) return {label: "Overweight", color: "text-purple-500"};
+    if (bmi >= 30.0 && bmi <= 34.9) return {label: "Obese (Class I)", color: "text-red-500"};
+    if (bmi >= 35.0 && bmi <= 39.9) return {label: "Obese (Class II)", color: "text-red-700"};
+    if (bmi > 40.0) return {label: "Obese (Class III)", color: "text-red-900"};
 
   }
   
@@ -55,35 +64,40 @@ function NutritionStatus() {
     }
 }
 
-// function to hide diet recommendation buttons
-const[isdataSubmitted, setIsdataSubmitted] = useState(false);
 
-useEffect(()=>{
-  setIsdataSubmitted(bmi !== null);
-}, [bmi])
 
 return (
 
      <div className='w-full max-w-[1100px] p-6 bg-white shadow-lg rounded-lg border border-gray-300 mt-[80px] mx-auto'>
-      <h1 className='text-3xl font-bold text-gray-500 font-serif'>Nutrition Status</h1>
-      <p className='text-gray-500 font-serif text-xl'>Your comprehensive assessment !</p>
-      {bmi && (
+      
+      {/* Conditionally render Heading */}
+      {isdataSubmitted && (
+        <div>
+          <h2 className='text-2xl font-bold text-gray-500 font-serif'>Nutrition Status</h2>
+          <p className='text-gray-500 font-serif text-xl'>Your comprehensive assessment !</p>
+        </div>
+      )}
+
+      {/* Show message before data is submitted */}
+      {!isdataSubmitted &&(
+        <p>Please submit your data to see your results</p>
+      )}
+  
+          
+      {/* Show results after submission */}
+      {isdataSubmitted && bmi && whr &&(
 
     <div>
-      
-      <div className='w-full p-6 bg-white shadow-lg rounded-lg text-center border border-gray-200'>
-            <h1>Overall Assessment</h1>
-            <p> </p>
-      </div>
 
       <div className='flex flex-col md:flex-row mt-5 justify-between gap-1'>
-
+          {/* Display BMI */}
         <div className='border border-gray-200 p-2 rounded-lg shadow-md w-full md:w-2/3 text-center'>
             <h1 className='text-lg font-semibold'>Body Mass Index</h1>
             <p className='text-2xl font-bold'>{bmi} </p>
-            <p className='text-green-600 font-bold'>{bmicategory()} </p>
+            <p className= {`${bmicategory()?.color} font-bold`}>{bmicategory()?.label} </p>
          </div>
 
+          {/* Display WHR */}
          <div className='border border-gray-200 p-2 rounded-lg shadow-md w-full md:w-2/3 text-center'>
             <h1 className='text-lg font-semibold'> Waist-Hip Ratio </h1>
             <p className='text-2xl font-bold'>{whr} </p>
@@ -95,7 +109,7 @@ return (
   </div>
       )}
 
-  {/* Show data if BMI exist */}
+  {/* Show diet recommendation button after results */}
   {isdataSubmitted &&(
     <div className='flex justify-center items-center mt-6 gap-4'>
     <div>

@@ -47,7 +47,7 @@ function SignIn() {
 
                 <div className='flex flex-col'>
                 <label htmlFor="password" className='font-semibold'>Password</label>
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} 
+                <input type="password" autoComplete='current-password' value={password} onChange={(e)=>setPassword(e.target.value)} 
                 className='border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ' />
 
                 </div>
