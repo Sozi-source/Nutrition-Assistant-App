@@ -32,7 +32,7 @@ function NavBar() {
 
           {/* Logo */}
           <div>
-            <Link>
+            <Link to = "/">
             <img src="/images/Logo2.jpg" alt="" className='h-15 w-20 border border-blue-300'/>
             </Link>
           </div>
@@ -41,7 +41,7 @@ function NavBar() {
           
            
              {/*Navigation links  */}
-            <ul className='ml-10 flex gap-6 text-blue-700 font-bold'>
+            <ul className='ml-10 flex gap-6 text-blue-700 font-bold text-xl'>
                 <li><Link to = "/">Home</Link> </li>
                 <li><Link to = "/about" >About</Link> </li>
                 <li><Link to = "/contact">Contact</Link> </li>

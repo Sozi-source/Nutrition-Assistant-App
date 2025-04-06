@@ -1,7 +1,7 @@
 import React from 'react'
 import {Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import About from './Pages/About';
+import About from './Pages/About Us';
 import Contacts from './Pages/Contacts';
 import SignUp from './Pages/SignUp';
 import SignIn from './Pages/SignIn';
@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import NutritionAssessment from './components/NutritionAssessment';
 import DietApi from './API/DietApi';
 import AuthPage from './Pages/AuthPage';
+import Footer from './components/Footer';
 
 
 
@@ -31,6 +32,7 @@ function App(){
   </Routes>
 
     </div>
+    <Footer />
   </div>
   )
 }
