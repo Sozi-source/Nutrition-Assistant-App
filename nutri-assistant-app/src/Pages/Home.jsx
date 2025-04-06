@@ -22,20 +22,20 @@ return (
           </div>
           
           {/* Cards */}
-          <div className='flex justify-center mt-[30px] gap-10'>
-            <div className='mb-4 w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
+          <div className='flex flex-col md:flex-row justify-center gap-6 md:gap-10 mt-10'>
+            <div className='w-full md:w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
 
               <h2 className='text-lg font-semibold'>Track Measurements</h2>
               <p className='text-sm leading-5'>Record and monitor your anthropometric data over time.</p>
             </div>
             
-            <div className='mb-4 w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
+            <div className='w-full md:w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
 
               <h2 className='text-xl font-semibold'>Nutrition Consultation</h2>
               <p className='text-sm leading-5'>Get expert advice tailored to your health—book a session with a nutritionist..</p>
             </div>
 
-            <div className='mb-4 w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
+            <div className='w-full md:w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
 
               <h2 className='text-xl font-semibold'>Healthy Recipes</h2>
               <p className='text-sm leading-5'>Discover recipes that align with your nutritional needs.</p>
