@@ -27,6 +27,10 @@ const handleSubmit =(e)=>{
   return (
     <div className='flex justify-center items-center bg-blue-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8'>
       <div className='w-full max-w-md sm:max-w-md space-y-8 bg-white p-8 shadow-lg rounded-lg'>
+         
+         {/* Back Button */}
+         <button onClick={()=>navigate("/nutrition-assessment")} className='absolute top-6 left-6 bg-white px-4 py-2 rounded-md shadow-md text-gray-700 hover:bg-gray-200 transition'>Back</button>
+
         <h1 className='text-3xl font-bold text-center text-gray-900'>Contact Us</h1>
       
       <form onSubmit={handleSubmit}>

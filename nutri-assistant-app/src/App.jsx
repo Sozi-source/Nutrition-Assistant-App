@@ -29,6 +29,8 @@ function App(){
     <Route path='/nutrition-assessment' element={<NutritionAssessment/>} />
     <Route path='/diet-api' element={<DietApi/>} />
     <Route path='/auth-page' element={<AuthPage/>} />
+    <Route path='/contacts' element={<Contacts/>} />
+
 
   </Routes>
 
