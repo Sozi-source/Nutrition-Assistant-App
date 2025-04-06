@@ -27,7 +27,7 @@ function NavBar() {
   return (
     <div>
       
-      <nav className='w-full h-25 bg-white text-white p-4 shadow-md'>
+      <nav className='w-full h-25 bg-gray-300 text-white p-4 shadow-md'>
         <div className='flex justify-between items-center p-4'>
 
           {/* Logo */}
