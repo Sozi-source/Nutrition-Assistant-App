@@ -27,7 +27,7 @@ function NavBar() {
   return (
     <div>
       
-      <nav className='w-full h-25 bg-gray-300 text-white p-4 shadow-md'>
+      <nav className='w-full h-25 bg-white text-white p-4 shadow-md'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
 
           {/* Logo */}
@@ -50,7 +50,7 @@ function NavBar() {
   </nav>
       <div>
             {user &&(
-              <div className='w-full sm:w-auto flex justify-center sm:justify-end mt-5'>
+              <div className='w-full sm:w-auto flex justify-center sm:justify-end mr-15'>
                   <LogoutButton />
               </div>
       )} 
