@@ -10,7 +10,7 @@ return (
   
        <div  className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/gold.jpg')" }}>
         
-       <div className='w-full sm:w-3/4 mx-auto bg-orange-200 p-6 rounded-lg shadow-xl bg-opacity-70'>
+       <div className='sm:w-3/4 mx-auto bg-orange-200 p-6 rounded-lg shadow-xl bg-opacity-70 min-w-[290px]'>
        <div className='mt-5 mb-6 p-6 bg-gray-200 bg-opacity-90 rounded-lg shadow-lg'>
           <h1 className='text-4xl font-bold text-[#34495e] mb-4'>Take Charge of Your Nutritional Health</h1>
           <p className='text-lg text-[#2c3e50] mb-5'>Easily track your body measurements, receive expert nutritional assessments, and connect with certified nutritionists for personalized consultations. Explore healthy, delicious recipes designed to support your wellness goals.</p>

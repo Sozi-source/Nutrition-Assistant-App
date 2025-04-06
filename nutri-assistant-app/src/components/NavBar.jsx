@@ -28,17 +28,14 @@ function NavBar() {
     <div>
       
       <nav className='w-full h-25 bg-gray-300 text-white p-4 shadow-md'>
-        <div className='flex justify-between items-center p-4'>
+        <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
 
           {/* Logo */}
           <div>
             <Link to = "/">
             <img src="/images/Logo2.jpg" alt="" className='h-15 w-20 border border-blue-300'/>
             </Link>
-          </div>
-           {/* Show logout button if user is logged in*/}
-           
-          
+          </div>             
            
              {/*Navigation links  */}
             <ul className='ml-10 flex gap-6 text-blue-700 font-bold text-xl'>
@@ -46,15 +43,19 @@ function NavBar() {
                 <li><Link to = "/about" >About</Link> </li>
                 <li><Link to = "/contact">Contact</Link> </li>
             </ul> 
-            <div>
-            {user &&(
-            <div className='flex-1 flex justify-between'><LogoutButton /></div>
-           )} 
-            </div>  
-            </div> 
+              {/* Show logout button if user is logged in*/}
             
-                 
+             
+            </div>                 
   </nav>
+      <div>
+            {user &&(
+              <div className='w-full sm:w-auto flex justify-center sm:justify-end mt-5'>
+                  <LogoutButton />
+              </div>
+      )} 
+      </div> 
+
 </div>  
 )}
 
