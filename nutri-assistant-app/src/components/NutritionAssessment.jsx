@@ -11,7 +11,7 @@ function NutritionAssessment() {
         <UserInputForm />
         </div>
 
-        <div className='min-w-[290px] sm:w-1/2 md:w-2/3 lg:w-3/4 p-2'>
+        <div className='min-w-[290px] sm:w-1/2 md:w-2/3 lg:w-3/4 p-2 mt-10'>
         <NutritionStatus />
         </div>
       
