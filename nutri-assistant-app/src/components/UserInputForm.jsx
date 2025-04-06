@@ -38,7 +38,7 @@ const UserInputForm =()=> {
 
   return (
    
-  <div className='flex justify-center items-center '>
+  <div className='flex justify-center items-center mt-[-150px] '>
     {/* Button to toggle form visibility */}
 
     <form onSubmit={handleSubmit} 

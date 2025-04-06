@@ -68,7 +68,7 @@ function NutritionStatus() {
 
 return (
 
-     <div className='w-3/4 max-w-[1100px] p-6 bg-white shadow-lg rounded-lg border border-gray-300 mx-auto'>
+     <div className='w-3/4 max-w-[1100px] p-6 bg-white shadow-lg rounded-lg border border-gray-300 mx-auto mt-[-250px]'>
       
       {/* Conditionally render Heading */}
       {isdataSubmitted && (
