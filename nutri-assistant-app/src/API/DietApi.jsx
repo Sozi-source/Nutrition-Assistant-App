@@ -38,17 +38,19 @@ function DietApi(){
   }
  
   return (
-    <div className='flex flex-col items-center px-4 mt-[80px]'>
+    <div className='flex flex-col items-center px-4 mt-[80px] bg-cover bg-center bg-no-repeat min-h-screen' style={{ backgroundImage: "url('/images/bg.jpg')" }}>
       <h1 className='text-2xl font-bold mb-6 font-serif'>Find a Recipe</h1>
 
       <div className='flex flex-col sm:flex-row items-center gap-4 mb-6 w-full max-w-md'>
       
        {/* Back Button */}
+       <div className='flex'>
        <button onClick={()=>navigate("/nutrition-assessment")} 
        className='font-serif font-bold bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition'> Back</button>
+       </div>
 
         <input type="text" value={query} onChange={(e)=>setQuery(e.target.value)} 
-        className='w-full border border-gray-600 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'/>
+        className='w-full border border-gray-600 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white'/>
         
       {/* Recipe search button */}
         <button onClick={fetchMeal} 

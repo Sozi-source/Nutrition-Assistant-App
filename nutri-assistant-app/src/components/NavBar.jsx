@@ -26,22 +26,35 @@ function NavBar() {
 
   return (
     <div>
-      <nav className='fixed top-[-30px] w-full bg-white shadow-md'>
+      
+      <nav className='w-full h-25 bg-white text-white p-4 shadow-md'>
         <div className='flex justify-between items-center p-4'>
+
+          {/* Logo */}
+          <div>
+            <Link>
+            <img src="/images/Logo2.jpg" alt="" className='h-15 w-20 border border-blue-300'/>
+            </Link>
+          </div>
            {/* Show logout button if user is logged in*/}
            
-           {user &&(
-            <div className='mt-3 text-gray-400 ml-4'><LogoutButton /></div>
-           )}
+          
            
              {/*Navigation links  */}
-            <ul className='ml-10 flex gap-6 text-blue-700 font-bold mt-5'>
+            <ul className='ml-10 flex gap-6 text-blue-700 font-bold'>
                 <li><Link to = "/">Home</Link> </li>
                 <li><Link to ="/features">Features</Link> </li>
                 <li><Link to = "/about" >About</Link> </li>
                 <li><Link to = "/contact">Contact</Link> </li>
             </ul> 
-            </div>          
+            <div>
+            {user &&(
+            <div className='flex-1 flex justify-between'><LogoutButton /></div>
+           )} 
+            </div>  
+            </div> 
+            
+                 
   </nav>
 </div>  
 )}

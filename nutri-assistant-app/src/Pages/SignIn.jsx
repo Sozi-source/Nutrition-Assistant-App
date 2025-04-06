@@ -33,27 +33,29 @@ function SignIn() {
 
   return (
     
-        <div className='w-96 p-6 rounded-lg'>
+        <div className='flex justify-center items-center'>
+            <div className='p-4 rounded-lg w-full max-w-lg'>
             <h1 className='text-2xl font-bold'>Sign In</h1>
-            <p className='mb-5 text-gray-600'>Enter your email and password to access your account</p>
+            <p className='text-gray-600'>Enter your email and password to access your account</p>
             
             <form onSubmit={handleSignIn} className='flex flex-col gap-2'>
 
                <div className='flex flex-col'>
                <label htmlFor="email" className='font-semibold'>Email</label>
                 <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='name@example.com'
-                className='border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
+                className='border border-gray-300 p-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
                </div>
 
                 <div className='flex flex-col'>
                 <label htmlFor="password" className='font-semibold'>Password</label>
                 <input type="password" autoComplete='current-password' value={password} onChange={(e)=>setPassword(e.target.value)} 
-                className='border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ' />
+                className='border border-gray-300 p-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ' />
 
                 </div>
                 <button type='submit' className='bg-blue-600 hover:bg-blue-700 text-white font-bold p-2 rounded-md transition duration-300' >Sign In</button>
 
             </form>
+            </div>
         </div>
     
   )

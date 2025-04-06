@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import AuthPage from './AuthPage';
 
 
 function Home() {
@@ -9,40 +8,40 @@ const navigate = useNavigate();
  
 return (
   
-       <div className='flex justify-between items-start mt-13'>
+       <div  className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/gold.jpg')" }}>
         
-        {/* Left side */}
-       <div className='w-1/2 ml-10 mb-20'>
-       <div className='mt-[50px]'>
-          <h1 className='text-3xl font-semibold mb-4'>Track Your Nutritional Health Journey</h1>
-          <p className='text-lg text-gray-700 mb-6'>Monitor your body measurements, receive personalized nutritional assessments, and discover healthy recipes tailored to your needs.</p>
+       <div className='w-full sm:w-3/4 mx-auto bg-orange-200 p-6 rounded-lg shadow-xl bg-opacity-70'>
+       <div className='mt-5 mb-6 p-6 bg-gray-200 bg-opacity-90 rounded-lg shadow-lg'>
+          <h1 className='text-4xl font-bold text-[#34495e] mb-4'>Take Charge of Your Nutritional Health</h1>
+          <p className='text-lg text-[#2c3e50] mb-5'>Easily track your body measurements, receive expert nutritional assessments, and connect with certified nutritionists for personalized consultations. Explore healthy, delicious recipes designed to support your wellness goals.</p>
         </div>
 
           <div className='flex justify-center items-center'>
             <button onClick={()=>navigate("/auth-page")} 
-            className='bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition'>Get Started</button>
+            className='bg-red-400 text-white px-6 py-3 rounded-lg shadow-md transition duration-300'>Get Started</button>
           </div>
           
           {/* Cards */}
-          <div className='flex justify-center mt-[50px] gap-4'>
-            <div className='mb-4 border border-gray-400 p-1 rounded-md'>
-              <h2 className='text-xl font-semibold'>Track Measurements</h2>
-              <p className='text-lg text-gray-600'>Record and monitor your anthropometric data over time.</p>
+          <div className='flex justify-center mt-[30px] gap-10'>
+            <div className='mb-4 w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
+
+              <h2 className='text-lg font-semibold'>Track Measurements</h2>
+              <p className='text-sm leading-5'>Record and monitor your anthropometric data over time.</p>
             </div>
             
-            <div className='mb-4 border border-gray-400 p-1 rounded-md'>
-              <h2 className='text-xl font-semibold'>Dietary Plans</h2>
-              <p className='text-lg text-gray-600'>Get personalized nutrition recommendations based on your health status.</p>
+            <div className='mb-4 w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
+
+              <h2 className='text-xl font-semibold'>Nutrition Consultation</h2>
+              <p className='text-sm leading-5'>Get expert advice tailored to your health—book a session with a nutritionist..</p>
             </div>
 
-            <div className='mb-4 border border-gray-400 p-1 rounded-md'>
+            <div className='mb-4 w-1/3 border border-gray-400 p-6 rounded-md bg-gradient-to-r from-[#3498db] to-[#8e44ad] shadow-xl text-white'>
+
               <h2 className='text-xl font-semibold'>Healthy Recipes</h2>
-              <p className='text-lg text-gray-600'>Discover recipes that align with your nutritional needs.</p>
+              <p className='text-sm leading-5'>Discover recipes that align with your nutritional needs.</p>
             </div>
           </div>
        </div>
-        
-               
        </div>
   )
 }

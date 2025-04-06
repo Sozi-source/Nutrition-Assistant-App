@@ -42,11 +42,10 @@ const UserInputForm =()=> {
     {/* Button to toggle form visibility */}
 
     <form onSubmit={handleSubmit} 
-      className= ' bg-white shadow-lg rounded-lg p-4 mx-auto border border-gray-300 justify-center items-center mt-[80px]'>             
-         <h1 className='text-2xl font-semibold bg-blue-50 shadow-sm text-gray-500 font-serif'>Anthropometric Data</h1>
-         <p className='mt-3 font-serif'>Enter your measurements</p>
+      className= ' bg-white shadow-lg rounded-lg p-4 mx-auto border border-gray-300 justify-center items-center'>             
+         <h1 className='text-2xl font-semibold bg-blue-50 shadow-sm text-black font-serif'>Personal Health Data</h1>
           
-          <div className='flex flex-col'>
+          <div className='flex flex-col mt-5'>
             <label htmlFor="gender" className='font-serif font-semibold'>Gender</label>
             <select name="gender" id="gender" value={formData.gender} onChange={handleChange}
             className= 'border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 text-center'>

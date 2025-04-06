@@ -15,10 +15,11 @@ import AuthPage from './Pages/AuthPage';
 
 function App(){
   return(
-    <div className='bg-cover bg-center bg-fixed bg-no-repeat h-screen' style={{backgroundImage: "url('/images/bgI.jpg')"}}>
-  {/* Navbar */}
+  <div className='min-h-screen bg-cover bg-center bg-no-repeat' style={{backgroundImage: "url('/images/gold.jpg')" }}>
+    <div className='bg-white bg-opacity-40 min-h-screen'>
+      {/* Navbar */}
   <NavBar/>
-  {/* Navigation Routes */}
+  {/* Navigation Routes */} 
   <Routes>
     <Route path='/' element={<Home/>} />
     <Route path='/features' element={<Features/>} />
@@ -29,11 +30,10 @@ function App(){
     <Route path='/nutrition-assessment' element={<NutritionAssessment/>} />
     <Route path='/diet-api' element={<DietApi/>} />
     <Route path='/auth-page' element={<AuthPage/>} />
-
-
-
   </Routes>
+
     </div>
+  </div>
   )
 }
 export default App;
