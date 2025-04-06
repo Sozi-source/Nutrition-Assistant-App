@@ -97,7 +97,7 @@ return (
             <p className= {`${bmicategory()?.color} font-bold`}>{bmicategory()?.label} </p>
             
             <div className='font-serif mt-5'>
-              <h3><strong>Health Recommendations</strong></h3>
+              <h3 className='text-green-400'><strong>Health Recommendations</strong></h3>
               <p className="text-gray-700">{bmicategory()?.recommendation}</p>
             </div>
          </div>
@@ -109,7 +109,7 @@ return (
             <p className={`${classifyWhr(whr, gender)?.color} font-bold`}>{classifyWhr(whr, gender)?.label}</p>
             
             <div className='font-serif mt-5'>
-              <h3><strong>Health Recommendations</strong></h3>
+              <h3 className='text-green-400'><strong>Health Recommendations</strong></h3>
               <p className="text-gray-700">{classifyWhr(whr, gender)?.recommendation}</p>
             </div>
 
@@ -127,7 +127,7 @@ return (
     </div>
 
     <div>
-      <button onClick={()=>navigate("/contacts")}>Consult a Nutritionist</button>
+      <button onClick={()=>navigate("/contacts")} className='bg-purple-600 hover:bg-gray-300 text-black font-bold py-2 px-6 rounded-lg shadow-md transition'>Consult a Nutritionist</button>
     </div>
 
 </div>

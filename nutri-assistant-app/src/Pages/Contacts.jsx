@@ -25,20 +25,23 @@ const handleSubmit =(e)=>{
    });
   };
   return (
-    <div className='flex justify-center items-center bg-blue-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8'>
-      <div className='w-full max-w-md sm:max-w-md space-y-8 bg-white p-8 shadow-lg rounded-lg'>
+    <div className='flex justify-center items-center bg-blue-50 min-h-screen py-5 px-4 sm:px-6 lg:px-8'>
+      <div className='w-full max-w-md sm:max-w-md space-y-2 bg-white p-3 shadow-lg rounded-lg'>
          
-         {/* Back Button */}
-         <button onClick={()=>navigate("/nutrition-assessment")} className='absolute top-6 left-6 bg-white px-4 py-2 rounded-md shadow-md text-gray-700 hover:bg-gray-200 transition'>Back</button>
-
+        <div className='flex'>
+          
+        </div>
         <h1 className='text-3xl font-bold text-center text-gray-900'>Contact Us</h1>
       
       <form onSubmit={handleSubmit}>
 
+         {/* Back Button */}
+         <button onClick={()=>navigate("/nutrition-assessment")} className='mt-[80px] absolute top-6 left-6 bg-blue-400 px-4 py-2 rounded-md shadow-md text-gray-700 hover:bg-gray-200 transition'>Back</button>
+
           <div className=''>
           <label htmlFor="name" className='block text-lg font-medium text-gray-700'>Full Name</label>
           <input type="text" value={formdata.name} name='name'  onChange={handleChange} required 
-          className='mt-2 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'/>
+          className='p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'/>
           </div>
 
           <div className=''>
@@ -50,13 +53,13 @@ const handleSubmit =(e)=>{
           <div className=''>
           <label htmlFor="phone" className='block text-lg font-medium text-gray-700'>Phone Number</label>
           <input type="text" value={formdata.phone} name='phone' onChange={handleChange} 
-          className='mt-2 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'/>
+          className='p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'/>
           </div>
 
           <div className=''>
           <label htmlFor="message" className='block text-lg font-medium text-gray-700'>Message</label>
           <textarea name="message" value={formdata.message} onChange={handleChange} required rows= "3"
-          className='mt-2 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500' ></textarea>
+          className='p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500' ></textarea>
           </div>
 
           <div>

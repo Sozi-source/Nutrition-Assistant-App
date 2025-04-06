@@ -39,7 +39,7 @@ function DietApi(){
  
   return (
     <div className='flex flex-col items-center px-4 mt-[80px] bg-cover bg-center bg-no-repeat min-h-screen' style={{ backgroundImage: "url('/images/bg.jpg')" }}>
-      <h1 className='text-2xl font-bold mb-6 font-serif'>Find a Recipe</h1>
+      <h1 className='text-2xl font-bold mb-6 font-serif'>Find your Healthly Recipe</h1>
 
       <div className='flex flex-col sm:flex-row items-center gap-4 mb-6 w-full max-w-md'>
       
@@ -76,7 +76,21 @@ function DietApi(){
               
               <p className='text-sm text-gray-600'><strong>Instruction:</strong> {meal.strInstructions} </p>
 
-              <p><strong>View on YouTube</strong>{meal.strYoutube}</p>
+              {/* Embed youtube Video */}
+              {meal.strYoutube && (
+                  <div className="mt-4">
+                    <iframe
+                      width="100%"
+                      height="250"
+                      src={`https://www.youtube.com/embed/${meal.strYoutube.split("v=")[1]}`}
+                      title={meal.strMeal}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="rounded-md"
+                    ></iframe>
+                  </div>
+                )}
+
             </div>
           ))}
 
